@@ -5,7 +5,36 @@ let hub_host = 'registry-1.docker.io';
 // Docker认证服务器地址
 const auth_url = 'https://auth.docker.io';
 
-let 屏蔽爬虫UA = ['netcraft'];
+// 搜索引擎类
+// 	百度 - Baiduspider
+// 	搜狗 - Sogou web spider
+//	神马搜索 - YisouSpider
+// 	谷歌 - Googlebot
+// 	必应 - Bingbot, BingPreview
+// 	雅虎 - Slurp
+// 	DuckDuckGo - DuckDuckBot
+// 	Seznam (捷克) - SeznamBot
+// 	华为 - PetalBot
+// SEO/外链分析类
+// 	Ahrefs - AhrefsBot
+// 	Majestic - MJ12bot
+// 	Exalead - Exabot
+// 社交媒体/内容聚合类
+// 	Facebook - facebot, facebookexternalhit
+// 	Twitter - Twitterbot
+// 	LinkedIn - LinkedInBot
+// 	Pinterest - pinterest/0.2
+// 	Reddit - redditbot
+// 	Embedly - embedly
+// 	Quora - quora link preview
+// 	ShowYou - showyoubot
+// 	Outbrain - outbrain
+// 工具/服务类
+// 	Netcraft - netcraft
+// 	Internet Archive - ia_archiver
+// 	W3C - W3C_Validator
+// 	苹果 - Applebot
+let 屏蔽爬虫UA = ['netcraft','Baiduspider','AhrefsBot','MJ12bot','YisouSpider','Sogou web spider','Exabot','facebot','ia_archiver','Googlebot','bingbot','Slurp','DuckDuckBot','BingPreview','Twitterbot','facebookexternalhit','LinkedInBot','embedly','quora link preview','showyoubot','outbrain','pinterest/0.2 (+http://www.pinterest.com/)','W3C_Validator','redditbot','Applebot','SeznamBot','PetalBot'];
 
 // 根据主机名选择对应的上游地址
 function routeByHosts(host) {
@@ -383,7 +412,7 @@ async function searchInterface() {
 					</svg>
 				</button>
 			</div>
-			<p class="tips">基于 Cloudflare Workers / Pages 构建，利用全球边缘网络实现毫秒级响应。</p>
+			<p class="tips">提示：按回车键快速搜索</p>
 		</div>
 		<script>
 		function performSearch() {
